@@ -1,0 +1,6 @@
+x_sample, y_sample = mnist.test.next_batch(5000)
+z_mu = vae_2d.transform(x_sample)
+plt.figure(figsize=(8, 6)) 
+plt.scatter(z_mu[:, 0], z_mu[:, 1], c=np.argmax(y_sample, 1))
+plt.colorbar()
+plt.grid()
